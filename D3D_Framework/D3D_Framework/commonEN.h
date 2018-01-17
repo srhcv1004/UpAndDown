@@ -1,0 +1,12 @@
+#pragma once
+
+enum E_BUTTON_TAG
+{
+	E_TAG_EXIT,
+	E_TAG_INGAME,
+	E_TAG_MAPTOOL,
+	E_TAG_MAINMENU,
+	E_TAG_NONE,
+	E_TAG_END = 5
+};
+
