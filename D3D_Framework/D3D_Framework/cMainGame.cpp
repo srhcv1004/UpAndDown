@@ -4,6 +4,7 @@
 #include "cInGame.h"
 #include "cMainMenu.h"
 #include "cMapTool.h"
+#include "cOption.h"
 
 cMainGame::cMainGame()
 {
@@ -59,6 +60,9 @@ void cMainGame::AddScenes()
 
 	cGameNode* pMapTool = new cMapTool();
 	D_SCENEMANAGER->AddScene("MapToolScene", pMapTool);
+
+	cGameNode* pOption = new cOption();
+	D_SCENEMANAGER->AddScene("OptionScene", pOption);
 
 	D_SCENEMANAGER->ChangeScene("MainMenuScene");
 }

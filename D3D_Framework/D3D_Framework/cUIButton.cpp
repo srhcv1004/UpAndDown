@@ -22,8 +22,6 @@ void cUIButton::Setup(std::string strSpriteDownKey,
 {
 	cUI::Setup();
 
-	m_pDelegate = new cButtonFunction();
-
 	this->SetupSprite(strSpriteDownKey, 
 		strSpriteUpKey, 
 		strSpriteOverKey);
@@ -62,7 +60,9 @@ void cUIButton::Update()
 			if (m_eButtonState == E_BTN_DOWN)
 			{
 				if (m_pDelegate)
+				{
 					m_pDelegate->OnClickButton(this, m_eButtonTag);
+				}
 			}
 
 			m_eButtonState = E_BTN_OVER;

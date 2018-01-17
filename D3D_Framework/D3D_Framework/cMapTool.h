@@ -4,6 +4,8 @@
 class cMapTool : public cGameNode
 {
 private:
+	void Save();
+	void Load();
 
 public:
 	cMapTool();

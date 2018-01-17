@@ -32,6 +32,29 @@ void cMainMenuUI::Render()
 		m_pRootUI->Render();
 }
 
+void cMainMenuUI::OnClickButton(cUIButton* pSender, E_BUTTON_TAG eButtonTag)
+{
+	switch (eButtonTag)
+	{
+		case E_BUTTON_TAG::E_TAG_INGAMESCENE:
+		{
+			D_SCENEMANAGER->ChangeScene("InGameScene");
+		}
+		break;
+
+		case E_BUTTON_TAG::E_TAG_MAPTOOLSCENE:
+		{
+			D_SCENEMANAGER->ChangeScene("MapToolScene");
+		}
+		break;
+
+		case E_BUTTON_TAG::E_TAG_OPTIONSCENE:
+		{
+			D_SCENEMANAGER->ChangeScene("OptionScene");
+		}
+		break;
+	}
+}
 
 void cMainMenuUI::SetupUI()
 {
@@ -41,6 +64,7 @@ void cMainMenuUI::SetupUI()
 		"tera",
 		D3DXVECTOR3(D_WINSIZEX / 2.F, D_WINSIZEY / 2.F - 200.F, 0.F), 
 		E_TAG_NONE);
+	pBody->SetDelegate(this);
 	m_pRootUI = pBody;
 
 	cUIButton* pStart = new cUIButton();
@@ -48,7 +72,8 @@ void cMainMenuUI::SetupUI()
 		"start",
 		"start",
 		D3DXVECTOR3(0, 300, 0), 
-		E_TAG_INGAME);
+		E_BUTTON_TAG::E_TAG_INGAMESCENE);
+	pStart->SetDelegate(this);
 	m_pRootUI->AddChild(pStart);
 
 	cUIButton* pOption = new cUIButton();
@@ -56,7 +81,8 @@ void cMainMenuUI::SetupUI()
 		"option",
 		"option",
 		D3DXVECTOR3(0, 400, 0),
-		E_TAG_NONE);
+		E_BUTTON_TAG::E_TAG_OPTIONSCENE);
+	pOption->SetDelegate(this);
 	m_pRootUI->AddChild(pOption);
 
 	cUIButton* pMaptool = new cUIButton();
@@ -64,6 +90,7 @@ void cMainMenuUI::SetupUI()
 		"maptool",
 		"maptool",
 		D3DXVECTOR3(0, 500, 0),
-		E_TAG_MAPTOOL);
+		E_BUTTON_TAG::E_TAG_MAPTOOLSCENE);
+	pMaptool->SetDelegate(this);
 	m_pRootUI->AddChild(pMaptool);
 }

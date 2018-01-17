@@ -7,7 +7,6 @@ cUI::cUI()
 	, m_bIsHidden(false)
 {
 	D3DXMatrixIdentity(&m_matWorldTM);
-
 }
 
 cUI::~cUI()

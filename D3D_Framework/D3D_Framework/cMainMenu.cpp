@@ -42,7 +42,6 @@ void cMainMenu::Render()
 
 	D_SPRITEMANAGER->Render("background", &matWorld);
 
-
 	if (m_pUI)
 		m_pUI->Render();
 }

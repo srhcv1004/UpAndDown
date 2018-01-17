@@ -24,3 +24,11 @@ void cMapTool::Update()
 void cMapTool::Render()
 {
 }
+
+void cMapTool::Save()
+{
+}
+
+void cMapTool::Load()
+{
+}

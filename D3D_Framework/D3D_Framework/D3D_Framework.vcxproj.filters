@@ -223,6 +223,21 @@
     <Filter Include="D3DGameFramework\cXFile\cCharacter\cXPlayer">
       <UniqueIdentifier>{8c0315a1-cdcb-4f90-87f6-3b78f606dc9b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\cMainGame\cOption">
+      <UniqueIdentifier>{6ae4728e-fee9-4058-a542-f1ff0bd50ebc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\cInven">
+      <UniqueIdentifier>{491cb1f7-219b-4983-b87b-e6c20ae5d54c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\cEquip">
+      <UniqueIdentifier>{522c3cc8-e66b-48b7-baac-7fd6f52d75dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\cItemManager">
+      <UniqueIdentifier>{d1f386d5-4fb8-4026-84b7-2e8847f8e7cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\cItemManager\cItem">
+      <UniqueIdentifier>{c8ebc387-420a-4905-ab54-24862f0c181d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -423,6 +438,21 @@
     <ClInclude Include="cSkinnedPlayer.h">
       <Filter>D3DGameFramework\cXFile\cSkinnedMesh\cControlSkinnedMesh</Filter>
     </ClInclude>
+    <ClInclude Include="cOption.h">
+      <Filter>소스 파일\cMainGame\cOption</Filter>
+    </ClInclude>
+    <ClInclude Include="cEquip.h">
+      <Filter>소스 파일\cEquip</Filter>
+    </ClInclude>
+    <ClInclude Include="cInven.h">
+      <Filter>소스 파일\cInven</Filter>
+    </ClInclude>
+    <ClInclude Include="cItem.h">
+      <Filter>소스 파일\cItemManager\cItem</Filter>
+    </ClInclude>
+    <ClInclude Include="cItemManager.h">
+      <Filter>소스 파일\cItemManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -598,6 +628,21 @@
     </ClCompile>
     <ClCompile Include="cSkinnedPlayer.cpp">
       <Filter>D3DGameFramework\cXFile\cSkinnedMesh\cControlSkinnedMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="cOption.cpp">
+      <Filter>소스 파일\cMainGame\cOption</Filter>
+    </ClCompile>
+    <ClCompile Include="cEquip.cpp">
+      <Filter>소스 파일\cEquip</Filter>
+    </ClCompile>
+    <ClCompile Include="cInven.cpp">
+      <Filter>소스 파일\cInven</Filter>
+    </ClCompile>
+    <ClCompile Include="cItem.cpp">
+      <Filter>소스 파일\cItemManager\cItem</Filter>
+    </ClCompile>
+    <ClCompile Include="cItemManager.cpp">
+      <Filter>소스 파일\cItemManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
