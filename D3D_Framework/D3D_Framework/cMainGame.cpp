@@ -3,10 +3,9 @@
 #include "cCamera.h"
 #include "cInGame.h"
 #include "cMainMenu.h"
+#include "cMapTool.h"
 
 cMainGame::cMainGame()
-	: m_pInGame(NULL)
-	, m_pMainMenu(NULL)
 {
 }
 
@@ -18,21 +17,14 @@ void cMainGame::Setup()
 {
 	cGameNode::Setup();
 
-	this->AddScenes();
 	this->AddFonts();
 	this->AddSprites();
 
-	D_SCENEMANAGER->ChangeScene("MainMenuScene");
+	this->AddScenes();
 }
 
 void cMainGame::Release()
 {
-	D_SAFE_RELEASE(m_pInGame);
-	D_SAFE_DELETE(m_pInGame);
-
-	D_SAFE_RELEASE(m_pMainMenu);
-	D_SAFE_DELETE(m_pMainMenu);
-
 	cGameNode::Release();
 }
 
@@ -51,31 +43,7 @@ void cMainGame::Render()
 	D_DEVICE->BeginScene();
 	
 	D_DEVICE->SetRenderState(D3DRS_LIGHTING, FALSE);
-	
-	static int x = 0;
-	static float fRot = 0.F;
-
-	x++;
-	if (x >= 13) x = 0;
-
-	fRot += 0.05F;
-
 	D_SCENEMANAGER->Render();
-
-
-	D3DXMATRIXA16 matWorld, matR, matT, matS;
-	D3DXMatrixIdentity(&matWorld);
-	D3DXMatrixIdentity(&matR);
-	D3DXMatrixIdentity(&matT);
-	D3DXMatrixIdentity(&matS);
-
-	D3DXMatrixScaling(&matS, 0.5F, 0.5F, 0.5F);
-	D3DXMatrixTranslation(&matT, D_WINSIZEX / 2, D_WINSIZEY / 2, 0.F);
-	D3DXMatrixRotationZ(&matR, fRot);
-
-	matWorld = matS * matR;
-
-	D_SPRITEMANAGER->Render("±è¿¬¾Æ", &matWorld);
 
 	D_DEVICE->EndScene();
 	D_DEVICE->Present(NULL, NULL, NULL, NULL);
@@ -83,11 +51,16 @@ void cMainGame::Render()
 
 void cMainGame::AddScenes()
 {
-	m_pMainMenu = new cMainMenu();
-	D_SCENEMANAGER->AddScene("MainMenuScene", m_pMainMenu);
+	cGameNode* pMainMenu = new cMainMenu();
+	D_SCENEMANAGER->AddScene("MainMenuScene", pMainMenu);
 
-	m_pInGame = new cInGame();
-	D_SCENEMANAGER->AddScene("InGameScene", m_pInGame);
+	cGameNode* pInGame = new cInGame();
+	D_SCENEMANAGER->AddScene("InGameScene", pInGame);
+
+	cGameNode* pMapTool = new cMapTool();
+	D_SCENEMANAGER->AddScene("MapToolScene", pMapTool);
+
+	D_SCENEMANAGER->ChangeScene("MainMenuScene");
 }
 
 void cMainGame::AddFonts()
@@ -97,8 +70,11 @@ void cMainGame::AddFonts()
 
 void cMainGame::AddSprites()
 {
-	D_SPRITEMANAGER->AddSprite("±è¿¬¾Æ", "ya.jpg"); 
-	D_SPRITEMANAGER->AddFrameSprite("¹Ì»çÀÏ", "missile.bmp", 13, 1);
+	D_SPRITEMANAGER->AddSprite("background", "UI/background.jpg");
+	D_SPRITEMANAGER->AddSprite("start", "UI/gamestart.png");
+	D_SPRITEMANAGER->AddSprite("option", "UI/option.png");
+	D_SPRITEMANAGER->AddSprite("maptool", "UI/maptool.png");
+	D_SPRITEMANAGER->AddSprite("tera", "UI/tera.png");
 }
 
 void cMainGame::AddSounds()

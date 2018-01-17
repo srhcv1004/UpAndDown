@@ -1,16 +1,17 @@
 #pragma once
+#include "cGameNode.h"
 
-class cMapTool
+class cMapTool : public cGameNode
 {
 private:
 
 public:
 	cMapTool();
-	~cMapTool();
+	virtual ~cMapTool();
 
-	void Setup();
-	void Release();
-	void Update();
-	void Render();
+	virtual void Setup();
+	virtual void Release();
+	virtual void Update();
+	virtual void Render();
 };
 

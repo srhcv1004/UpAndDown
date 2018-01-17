@@ -2,8 +2,10 @@
 #include "cMainMenu.h"
 #include "cImage.h"
 #include "cSprite.h"
+#include "cMainMenuUI.h"
 
 cMainMenu::cMainMenu()
+	: m_pUI(NULL)
 {
 }
 
@@ -14,6 +16,9 @@ cMainMenu::~cMainMenu()
 void cMainMenu::Setup()
 {
 	D_SPRITEMANAGER->AddSprite("메인메뉴", "Images/Sample/Image2D/MainMenu.bmp", D_WINSIZEX, D_WINSIZEY);
+
+	m_pUI = new cMainMenuUI();
+	m_pUI->Setup();
 }
 
 void cMainMenu::Release()
@@ -22,19 +27,22 @@ void cMainMenu::Release()
 
 void cMainMenu::Update()
 {
-	if (D_KEYMANAGER->IsOnceKeyDown(VK_SPACE))
-	{
-		D_SCENEMANAGER->ChangeScene("InGameScene");
-	}
+	if (m_pUI)
+		m_pUI->Update();
 }
 
 void cMainMenu::Render()
 {
-	D3DXMATRIXA16 matT;
-	D3DXMatrixTranslation(&matT, 
-		D_SPRITEMANAGER->FindSprite("메인메뉴")->GetWidth() / 2.F,
-		D_SPRITEMANAGER->FindSprite("메인메뉴")->GetHeight() / 2.F, 
+	D3DXMATRIXA16 matWorld;
+	D3DXMatrixIdentity(&matWorld);
+	D3DXMatrixTranslation(&matWorld,
+		D_SPRITEMANAGER->FindSprite("background")->GetWidth() / 2.F,
+		D_SPRITEMANAGER->FindSprite("background")->GetHeight() / 2.F,
 		0.F);
 
-	D_SPRITEMANAGER->Render("메인메뉴", &matT);
+	D_SPRITEMANAGER->Render("background", &matWorld);
+
+
+	if (m_pUI)
+		m_pUI->Render();
 }

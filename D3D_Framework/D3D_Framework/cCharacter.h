@@ -11,6 +11,9 @@ protected:
 	D_SYNTHESIZE_REF(D3DXVECTOR3, m_vChangeDir, ChangeDir);
 
 protected:
+	float													m_fSpeed;
+
+protected:
 	float													m_fRotY;
 
 public:
@@ -22,4 +25,3 @@ public:
 	virtual void Update();
 	virtual void Render();
 };
-

@@ -3,8 +3,8 @@
 
 class cCamera;
 class iGrid;
-class cXFileObj;
-class cProgressBar;
+
+class cXPlayer;
 
 class cInGame : public cGameNode
 {
@@ -13,11 +13,9 @@ private:
 
 private:
 	iGrid*													m_pLineGrid;
-	cXFileObj*												m_pXFilePlayer;
-	cProgressBar*											m_pProgressBar;
 
-	float													m_fMax;
-	float													m_fCur;
+private:
+	cXPlayer*												m_pPlayer;
 
 public:
 	cInGame();

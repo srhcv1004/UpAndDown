@@ -1,9 +1,12 @@
 #pragma once
 #include "cGameNode.h"
 
+class cMainMenuUI;
+
 class cMainMenu : public cGameNode
 {
 private:
+	cMainMenuUI*											m_pUI;
 
 public:
 	cMainMenu();

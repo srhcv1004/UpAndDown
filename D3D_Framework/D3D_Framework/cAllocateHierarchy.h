@@ -2,12 +2,15 @@
 
 class cAllocateHierarchy : public ID3DXAllocateHierarchy
 {
+protected:
+	D_SYNTHESIZE(std::string, m_strFolderName, FolderName);
+
 public:
 	cAllocateHierarchy();
 	virtual ~cAllocateHierarchy();
 
 	STDMETHOD(CreateFrame)(THIS_ LPCSTR Name,
-		LPD3DXFRAME* ppNewFrame);
+		LPD3DXFRAME *ppNewFrame);
 
 	STDMETHOD(CreateMeshContainer)(THIS_ LPCSTR Name,
 		CONST D3DXMESHDATA* pMeshData,

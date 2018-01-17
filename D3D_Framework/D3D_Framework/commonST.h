@@ -61,11 +61,12 @@ struct ST_BONE : public D3DXFRAME
 struct ST_BONEMESH : public D3DXMESHCONTAINER
 {
 	ID3DXMesh*												pMeshOrigin;
+
 	std::vector<D3DMATERIAL9>								vecMaterial;
 	std::vector<IDirect3DTexture9*>							vecTexture;
 
-	D3DXATTRIBUTERANGE*										pAttributeInfo;
-	DWORD													ulAttributeCount;
+	D3DXATTRIBUTERANGE*										pAttribute;
+	DWORD													dwAttributeCount;
 
 	D3DXMATRIXA16**											ppMat;
 	D3DXMATRIXA16*											pMatOffset;

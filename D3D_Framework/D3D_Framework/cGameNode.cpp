@@ -82,7 +82,7 @@ void cGameNode::Update()
 void cGameNode::Render()
 {	// ----------------------------------------------------------------------------------------------------
 	D_DEVICE->Clear(NULL, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER,
-		D3DCOLOR_XRGB(255, 0, 0), 1.F, 0);
+		D3DCOLOR_XRGB(255, 125, 0), 1.F, 0);
 	// ----------------------------------------------------------------------------------------------------
 }
 
@@ -90,24 +90,38 @@ LRESULT cGameNode::MainProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 {
 	switch (message)
 	{
-	case WM_PAINT:
-	{
-		PAINTSTRUCT ps;
-		HDC hdc = BeginPaint(hWnd, &ps);
-		EndPaint(hWnd, &ps);
-	}
-	break;
-	case WM_MOUSEMOVE:
-
-		g_ptMouse.x = static_cast<float>LOWORD(lParam);
-		g_ptMouse.y = static_cast<float>HIWORD(lParam);
-
+		case WM_PAINT:
+		{
+			PAINTSTRUCT ps;
+			HDC hdc = BeginPaint(hWnd, &ps);
+			EndPaint(hWnd, &ps);
+		}
 		break;
-	case WM_DESTROY:
-		PostQuitMessage(0);
+
+		case WM_MOUSEWHEEL:
+		{
+			g_fWheelDelta = GET_WHEEL_DELTA_WPARAM(wParam) / 40.F;
+		}
 		break;
-	default:
-		return DefWindowProc(hWnd, message, wParam, lParam);
+
+		case WM_MOUSEMOVE:
+		{	
+			g_ptMouse.x = static_cast<float>LOWORD(lParam);
+			g_ptMouse.y = static_cast<float>HIWORD(lParam);
+		}
+		break;
+
+		case WM_DESTROY:
+		{
+			PostQuitMessage(0);
+		}
+		break;
+
+		default:
+		{
+			return DefWindowProc(hWnd, message, wParam, lParam);
+		}
+		break;
 	}
 	return 0;
 }

@@ -34,7 +34,9 @@ void cCamera::Release()
 
 void cCamera::Update()
 {
-	this->ControlCamera();
+	this->ControlCamDistance();
+	this->ControlCamRotation();
+
 	this->CreateMatView();
 }
 
@@ -55,21 +57,25 @@ void cCamera::CreateMatProj()
 	D_DEVICE->SetTransform(D3DTS_PROJECTION, &matProj);
 }
 
-void cCamera::ControlCamera()
+void cCamera::ControlCamDistance()
 {
-	if (D_KEYMANAGER->IsStayKeyDown('W'))
+	m_fCamDistance -= g_fWheelDelta;
+
+	if (m_fCamDistance < 10.F)
 	{
-		m_fCamDistance -= 0.1F;
+		m_fCamDistance = 10.F;
 	}
-	if (D_KEYMANAGER->IsStayKeyDown('S'))
+	else if (m_fCamDistance > 30.F)
 	{
-		m_fCamDistance += 0.1F;
+		m_fCamDistance = 30.F;
 	}
 
 	m_vEye = D3DXVECTOR3(0.F, m_fCamDistance, -m_fCamDistance);
+	g_fWheelDelta = 0.F;
+}
 
-	//
-
+void cCamera::ControlCamRotation()
+{
 	if (D_KEYMANAGER->IsOnceKeyDown(VK_LBUTTON))
 	{
 		m_bIsLButtonDown = true;

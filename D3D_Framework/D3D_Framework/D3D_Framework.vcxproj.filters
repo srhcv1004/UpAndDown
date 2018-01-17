@@ -133,9 +133,6 @@
     <Filter Include="D3DGameFramework\UTILS">
       <UniqueIdentifier>{75478105-a81d-4862-9603-0d58262aa889}</UniqueIdentifier>
     </Filter>
-    <Filter Include="D3DGameFramework\object\cCharacter">
-      <UniqueIdentifier>{cb36074c-99aa-4d77-841f-9e6d0fd01bb4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="D3DGameFramework\object\cCubeObj\cCubeCharacter\cCubeMan\cCubeManPlayer">
       <UniqueIdentifier>{474e96e9-9f26-47e9-b829-404be5bdf46a}</UniqueIdentifier>
     </Filter>
@@ -178,12 +175,6 @@
     <Filter Include="D3DGameFramework\cXFile">
       <UniqueIdentifier>{c5274cae-e32a-4fd9-8617-4cbb924c0e2c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="D3DGameFramework\object\cXFileObj">
-      <UniqueIdentifier>{0b0232b4-68a8-484a-a312-7af783320036}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="D3DGameFramework\cXFile\cXFileObj">
-      <UniqueIdentifier>{1e3c5fef-6727-4a33-9cb4-db35c1af14b1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="D3DGameFramework\cProgressBar">
       <UniqueIdentifier>{511d0f65-768e-4cba-b2a8-27d67bda7992}</UniqueIdentifier>
     </Filter>
@@ -195,6 +186,42 @@
     </Filter>
     <Filter Include="소스 파일\cMainGame\cMapTool">
       <UniqueIdentifier>{57e179b0-38fe-418b-81cc-4860b602f926}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3DGameFramework\UI">
+      <UniqueIdentifier>{c386e782-cdd5-43b1-a1e9-912ca5a5fa6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3DGameFramework\UI\cUI">
+      <UniqueIdentifier>{c1b6b334-5069-4b21-9163-05a156638b1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3DGameFramework\UI\cUISprite">
+      <UniqueIdentifier>{82306ba7-0328-4ec8-9d68-4e3f12c92ba5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3DGameFramework\UI\cUIButton">
+      <UniqueIdentifier>{b0e675dd-3f3d-4f9f-a7b4-68eefb06f393}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3DGameFramework\UI\cUIText">
+      <UniqueIdentifier>{d4aea584-4d5c-4759-bc41-1b1a25714d0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3DGameFramework\commonData\commonEN">
+      <UniqueIdentifier>{3e89235c-a8d9-43f9-bac4-fb827466c617}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\cMainGame\cMainMenu\cMainMenuUI">
+      <UniqueIdentifier>{8ee31345-1845-4927-a5a8-dfcdb4529a42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3DGameFramework\cXFile\cSkinnedMesh">
+      <UniqueIdentifier>{5839f7ff-01c4-4417-99bf-222234e142f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3DGameFramework\cXFile\cAllocateHierarchy">
+      <UniqueIdentifier>{050052d6-8fa0-4413-b061-760179abe82b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3DGameFramework\cXFile\cCharacter">
+      <UniqueIdentifier>{cb36074c-99aa-4d77-841f-9e6d0fd01bb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3DGameFramework\cXFile\cSkinnedMesh\cControlSkinnedMesh">
+      <UniqueIdentifier>{b2c72fda-96e9-4376-a6e6-de5e0c9221ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3DGameFramework\cXFile\cCharacter\cXPlayer">
+      <UniqueIdentifier>{8c0315a1-cdcb-4f90-87f6-3b78f606dc9b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -307,7 +334,7 @@
       <Filter>D3DGameFramework\UTILS</Filter>
     </ClInclude>
     <ClInclude Include="cCharacter.h">
-      <Filter>D3DGameFramework\object\cCharacter</Filter>
+      <Filter>D3DGameFramework\cXFile\cCharacter</Filter>
     </ClInclude>
     <ClInclude Include="cCubeManNpc.h">
       <Filter>D3DGameFramework\object\cCubeObj\cCubeCharacter\cCubeMan\cCubeManNpc</Filter>
@@ -354,15 +381,6 @@
     <ClInclude Include="cAseObject.h">
       <Filter>D3DGameFramework\object\cAseObj\cAseCharacter\cAseObject</Filter>
     </ClInclude>
-    <ClInclude Include="cXFilePlayer.h">
-      <Filter>D3DGameFramework\object\cXFileObj</Filter>
-    </ClInclude>
-    <ClInclude Include="cXFileObj.h">
-      <Filter>D3DGameFramework\cXFile\cXFileObj</Filter>
-    </ClInclude>
-    <ClInclude Include="cAllocateHierarchy.h">
-      <Filter>D3DGameFramework\cXFile</Filter>
-    </ClInclude>
     <ClInclude Include="cProgressBar.h">
       <Filter>D3DGameFramework\cProgressBar</Filter>
     </ClInclude>
@@ -374,6 +392,36 @@
     </ClInclude>
     <ClInclude Include="cMapTool.h">
       <Filter>소스 파일\cMainGame\cMapTool</Filter>
+    </ClInclude>
+    <ClInclude Include="cUI.h">
+      <Filter>D3DGameFramework\UI\cUI</Filter>
+    </ClInclude>
+    <ClInclude Include="cUIButton.h">
+      <Filter>D3DGameFramework\UI\cUIButton</Filter>
+    </ClInclude>
+    <ClInclude Include="cUISprite.h">
+      <Filter>D3DGameFramework\UI\cUISprite</Filter>
+    </ClInclude>
+    <ClInclude Include="cUIText.h">
+      <Filter>D3DGameFramework\UI\cUIText</Filter>
+    </ClInclude>
+    <ClInclude Include="commonEN.h">
+      <Filter>D3DGameFramework\commonData\commonEN</Filter>
+    </ClInclude>
+    <ClInclude Include="cMainMenuUI.h">
+      <Filter>소스 파일\cMainGame\cMainMenu\cMainMenuUI</Filter>
+    </ClInclude>
+    <ClInclude Include="cAllocateHierarchy.h">
+      <Filter>D3DGameFramework\cXFile\cAllocateHierarchy</Filter>
+    </ClInclude>
+    <ClInclude Include="cSkinnedMesh.h">
+      <Filter>D3DGameFramework\cXFile\cSkinnedMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="cXPlayer.h">
+      <Filter>D3DGameFramework\cXFile\cCharacter\cXPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="cSkinnedPlayer.h">
+      <Filter>D3DGameFramework\cXFile\cSkinnedMesh\cControlSkinnedMesh</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -465,7 +513,7 @@
       <Filter>D3DGameFramework\UTILS</Filter>
     </ClCompile>
     <ClCompile Include="cCharacter.cpp">
-      <Filter>D3DGameFramework\object\cCharacter</Filter>
+      <Filter>D3DGameFramework\cXFile\cCharacter</Filter>
     </ClCompile>
     <ClCompile Include="cCubeManNpc.cpp">
       <Filter>D3DGameFramework\object\cCubeObj\cCubeCharacter\cCubeMan\cCubeManNpc</Filter>
@@ -512,15 +560,6 @@
     <ClCompile Include="cAseObject.cpp">
       <Filter>D3DGameFramework\object\cAseObj\cAseCharacter\cAseObject</Filter>
     </ClCompile>
-    <ClCompile Include="cXFilePlayer.cpp">
-      <Filter>D3DGameFramework\object\cXFileObj</Filter>
-    </ClCompile>
-    <ClCompile Include="cXFileObj.cpp">
-      <Filter>D3DGameFramework\cXFile\cXFileObj</Filter>
-    </ClCompile>
-    <ClCompile Include="cAllocateHierarchy.cpp">
-      <Filter>D3DGameFramework\cXFile</Filter>
-    </ClCompile>
     <ClCompile Include="cProgressBar.cpp">
       <Filter>D3DGameFramework\cProgressBar</Filter>
     </ClCompile>
@@ -532,6 +571,33 @@
     </ClCompile>
     <ClCompile Include="cMapTool.cpp">
       <Filter>소스 파일\cMainGame\cMapTool</Filter>
+    </ClCompile>
+    <ClCompile Include="cUI.cpp">
+      <Filter>D3DGameFramework\UI\cUI</Filter>
+    </ClCompile>
+    <ClCompile Include="cUIButton.cpp">
+      <Filter>D3DGameFramework\UI\cUIButton</Filter>
+    </ClCompile>
+    <ClCompile Include="cUISprite.cpp">
+      <Filter>D3DGameFramework\UI\cUISprite</Filter>
+    </ClCompile>
+    <ClCompile Include="cUIText.cpp">
+      <Filter>D3DGameFramework\UI\cUIText</Filter>
+    </ClCompile>
+    <ClCompile Include="cMainMenuUI.cpp">
+      <Filter>소스 파일\cMainGame\cMainMenu\cMainMenuUI</Filter>
+    </ClCompile>
+    <ClCompile Include="cAllocateHierarchy.cpp">
+      <Filter>D3DGameFramework\cXFile\cAllocateHierarchy</Filter>
+    </ClCompile>
+    <ClCompile Include="cSkinnedMesh.cpp">
+      <Filter>D3DGameFramework\cXFile\cSkinnedMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="cXPlayer.cpp">
+      <Filter>D3DGameFramework\cXFile\cCharacter\cXPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="cSkinnedPlayer.cpp">
+      <Filter>D3DGameFramework\cXFile\cSkinnedMesh\cControlSkinnedMesh</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

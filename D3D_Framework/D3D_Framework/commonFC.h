@@ -1,7 +1,6 @@
 #pragma once
 
 //API 편의 함수.. D3D용으로 교체 예정임.
-
 inline POINT PointMake(int nPosX, int nPosY)
 {
 	POINT sPos = { nPosX, nPosY };
@@ -49,7 +48,7 @@ inline void LineDraw(HDC hdc, int nMoveX, int nMoveY, int nLineX, int nLineY)
 	LineTo(hdc, nLineX, nLineY);
 }
 
-inline void CalculateMatWorldTM(ST_BONE* pBone, D3DXMATRIXA16* pMatParentWorldTM)
+inline void UpdateMatWorldTM(ST_BONE* pBone, D3DXMATRIXA16* pMatParentWorldTM)
 {
 	if (!pBone) return;
 
@@ -57,8 +56,12 @@ inline void CalculateMatWorldTM(ST_BONE* pBone, D3DXMATRIXA16* pMatParentWorldTM
 		&pBone->TransformationMatrix, pMatParentWorldTM);
 
 	if (pBone->pFrameSibling)
-		CalculateMatWorldTM((ST_BONE*)pBone->pFrameSibling, pMatParentWorldTM);
+	{
+		UpdateMatWorldTM((ST_BONE*)pBone->pFrameSibling, pMatParentWorldTM);
+	}
 
 	if (pBone->pFrameFirstChild)
-		CalculateMatWorldTM((ST_BONE*)pBone->pFrameFirstChild, &pBone->matWorldTM);
+	{
+		UpdateMatWorldTM((ST_BONE*)pBone->pFrameFirstChild, &pBone->matWorldTM);
+	}
 }

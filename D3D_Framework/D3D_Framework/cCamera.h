@@ -20,7 +20,8 @@ private:
 	void CreateMatView();
 	void CreateMatProj();
 
-	void ControlCamera();
+	void ControlCamDistance();
+	void ControlCamRotation();
 
 public:
 	cCamera();
