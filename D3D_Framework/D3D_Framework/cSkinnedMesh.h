@@ -21,6 +21,7 @@ private:
 private:
 	void RenderSkinnedMesh(ST_BONE* pBone);
 	void RenderBones(ST_BONE* pBone, D3DXMATRIXA16* pMatWorld);
+	void RenderBoneLines(ST_BONE* pBone, ST_BONE* pParent, D3DXMATRIXA16* matWorld);
 
 public:
 	cSkinnedMesh();

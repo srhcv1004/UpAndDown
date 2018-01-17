@@ -1,6 +1,7 @@
 #pragma once
 
 // Vertex
+
 struct ST_PC_VERTEX
 {
 	ST_PC_VERTEX() {}
